@@ -80,7 +80,7 @@ window.addEventListener('devicemotion', function(event){ //デバイスが動い
         <a-sky color="#ECECEC"></a-sky>
         <a-entity id="camera" camera look-controls raycaster="objects: .collidable; far: 0.5;" collider-check rotation="0 0 0" position="0 0.3 0"></a-entity>
     </a-scene>
-            <!--
+            
             <script>
             var t = 0;
 var speed = 0.01;
@@ -97,7 +97,7 @@ AFRAME.registerComponent('collider-check', {
     }
 });
 
--->
+
 function movePlayer() {
     var camera = document.getElementById('camera');
     
@@ -111,13 +111,13 @@ function movePlayer() {
         if (camera && !isIntersect && accZ < -1) {
         for(i = 0;i < 10000;i++){
         
-            -->
+            
             var position = camera.getAttribute('position');
             var rotation = camera.getAttribute('rotation');
             position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
             position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
             camera.setAttribute('position', position);
-        <!--
+        
             }
             
     }

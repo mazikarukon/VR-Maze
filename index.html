@@ -102,10 +102,11 @@ function movePlayer() {
     window.addEventListener('devicemotion', function(event){
         var accZ = event.acceleration.z;
     }
-        
+    
+                            /*
     if (camera && !isIntersect && accZ < -1) {
         for(i = 0;i < 10000;i++){
-        
+        */
             var position = camera.getAttribute('position');
             var rotation = camera.getAttribute('rotation');
             position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;

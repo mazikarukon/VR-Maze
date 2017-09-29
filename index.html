@@ -107,21 +107,21 @@ function movePlayer() {
     
      
             
-        <!--
+        /*
         if (camera && !isIntersect && accZ < -1) {
         for(i = 0;i < 10000;i++){
-        
+        */
             
             var position = camera.getAttribute('position');
             var rotation = camera.getAttribute('rotation');
             position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
             position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
             camera.setAttribute('position', position);
-        
+        /*
             }
             
     }
--->
+*/
 }
 function render() {
     t += 0.01;

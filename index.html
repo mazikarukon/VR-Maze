@@ -45,21 +45,21 @@
 });
  
             
-            if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -2) {
-    for(i=0; i < 10 ; i++){    
-            
-            
+         
 function render() {
   t += 0.01;
   requestAnimationFrame(render);
   var camera = document.getElementById('camera');
-
+   if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -2) {
+   
+            
                 var position = camera.getAttribute('position');
                 var rotation = camera.getAttribute('rotation');
 
                 position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
                 position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
                 camera.setAttribute('position', position);
+   }
         
 }
 render();

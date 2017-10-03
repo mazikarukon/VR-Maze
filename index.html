@@ -21,7 +21,7 @@
 
         });
             var t = 0;
-            var spd = 0.01;
+            //var spd = 0.01;
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
@@ -30,8 +30,8 @@
                     var position = camera.getAttribute('position');
                     var rotation = camera.getAttribute('rotation');
 
-                    position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * spd ;
-                    position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * spd ;
+                    position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * 0.01 ;
+                    position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * 0.01 ;
                     camera.setAttribute('position', position);
                 //}
             }

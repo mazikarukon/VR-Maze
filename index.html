@@ -32,11 +32,6 @@
             var isIntersect = false;
 
 
-function render() {
-  t += 0.01;
-  requestAnimationFrame(render);
-  var camera = document.getElementById('camera');
-
     AFRAME.registerComponent('collider-check', {
     dependencies: ['raycaster'],
     init: function () {
@@ -49,6 +44,11 @@ function render() {
     }
 });
     
+function render() {
+  t += 0.01;
+  requestAnimationFrame(render);
+  var camera = document.getElementById('camera');
+
     if (!isIntersect && document.getElementById('accelerationIncludingGravityZ').innerHTML < -3) {
         if(camera){
             

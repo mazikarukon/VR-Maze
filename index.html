@@ -20,6 +20,19 @@
             document.getElementById('accelerationIncludingGravityZ').innerHTML = event.accelerationIncludingGravity.z; // event.acceleration.zで前後方向の加速度取得
 
         });
+            
+            
+            var t = 0;
+function render() {
+  t += 0.01;
+  requestAnimationFrame(render);
+  var position = camera.getAttribute('position');
+    position.x += 0.01
+    camera.setAttribute('position', position);
+}
+render();
+            
+            /*
             var t = 0;
             //var spd = 0.01;
             function render() {
@@ -35,7 +48,8 @@
                     camera.setAttribute('position', position);
                 //}
             }
-            render();    
+            render();   
+            */
             </script> 
             
      

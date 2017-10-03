@@ -48,12 +48,15 @@ function render() {
   var camera = document.getElementById('camera');
 
     if (!isIntersect && document.getElementById('accelerationIncludingGravityZ').innerHTML < -3) {
+        if(camera){
+            
         var position = camera.getAttribute('position');
         var rotation = camera.getAttribute('rotation');
 
         position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
         position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
         camera.setAttribute('position', position);
+        }
     }
 }
 render();

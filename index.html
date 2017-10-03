@@ -26,23 +26,7 @@
 
         });
             
-            
-            var t = 0;
-            var speed = 0.05;
-            var isIntersect = false;
-
-
-'use strict';
-
-require('aframe');
-
-            
-         
-function render() {
-  t += 0.01;
-  requestAnimationFrame(render);
-  var camera = document.getElementById('camera');
-   
+        
         AFRAME.registerComponent('collider-check', {
     dependencies: ['raycaster'],
     init: function () {
@@ -54,13 +38,17 @@ function render() {
         });
     }
 });
+     
+            var t = 0;
+            var speed = 0.05;
+            var isIntersect = false;
  
-    
-    
-    if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -1) {
-   
-            
-                var position = camera.getAttribute('position');
+function render() {
+  t += 0.01;
+  requestAnimationFrame(render);
+  var camera = document.getElementById('camera');
+      if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -1) {
+              var position = camera.getAttribute('position');
                 var rotation = camera.getAttribute('rotation');
 
                 position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;

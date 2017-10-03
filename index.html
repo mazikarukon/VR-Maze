@@ -49,7 +49,7 @@ function render() {
   requestAnimationFrame(render);
   var camera = document.getElementById('camera');
 
-    if (!isIntersect && document.getElementById('accelerationIncludingGravityZ').innerHTML < -2) {
+    if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -2) {
         if(camera){
             for(i=0; i <100; i++){    
                 var position = camera.getAttribute('position');

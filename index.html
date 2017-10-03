@@ -15,6 +15,12 @@
         <p>前後方向の加速度:<br><span id="accelerationZ"></span>m/s<sup>2</sup>
         
         <script>
+          window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
+            document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
+
+        });
+            
+            
             var t = 0;
 var speed = 0.01;
 var isIntersect = false;
@@ -52,17 +58,7 @@ function render() {
 render();
             </script> 
             
-            
-            
-            
-window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
-    document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
-
-        });
-        </script>
-
-        
-        
+     
     <a-scene>
         <a-entity id="maze" position="-4 1 -10">
             <a-box class="collidable" position="0 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>

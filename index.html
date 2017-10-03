@@ -31,7 +31,13 @@
             var speed = 0.01;
             var isIntersect = false;
 
-AFRAME.registerComponent('collider-check', {
+
+function render() {
+  t += 0.01;
+  requestAnimationFrame(render);
+  var camera = document.getElementById('camera');
+
+    AFRAME.registerComponent('collider-check', {
     dependencies: ['raycaster'],
     init: function () {
         this.el.addEventListener('raycaster-intersection', function () {
@@ -42,11 +48,7 @@ AFRAME.registerComponent('collider-check', {
         });
     }
 });
-function render() {
-  t += 0.01;
-  requestAnimationFrame(render);
-  var camera = document.getElementById('camera');
-
+    
     if (!isIntersect && document.getElementById('accelerationIncludingGravityZ').innerHTML < -3) {
         if(camera){
             

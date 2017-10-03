@@ -20,17 +20,22 @@
             document.getElementById('accelerationIncludingGravityZ').innerHTML = event.accelerationIncludingGravity.z; // event.acceleration.zで前後方向の加速度取得
 
         });
-            
-            if(document.getElementById('accelerationIncludingGravityZ').innerHTML < -3){
-                var position = camera.getAttribute('position');
-                var rotation = camera.getAttribute('rotation');
+            var t = 0;
+            var spd = 0.01;
+            function render() {
+                t += 0.01;
+                requestAnimationFrame(render);
+                var camera = document.getElementById('camera');
+                if(document.getElementById('accelerationIncludingGravityZ').innerHTML < -3){
+                    var position = camera.getAttribute('position');
+                    var rotation = camera.getAttribute('rotation');
 
-                position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) ;
-                position.z += Math.sin((rotation.y - 90) * Math.PI / 180) ;
-                camera.setAttribute('position', position);
+                    position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * spd ;
+                    position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * spd ;
+                    camera.setAttribute('position', position);
+                }
             }
-            
-                
+            render();    
             </script> 
             
      

@@ -16,13 +16,11 @@
             var speed = 0.05;
             var isIntersect = false;
  
-          
-            
 function render() {
   t += 0.01;
   requestAnimationFrame(render);
   var camera = document.getElementById('camera');
-      if (!isIntersect && document.getElementById('accelerationZ').innerHTML < -1.5) {
+      if ( document.getElementById('accelerationZ').innerHTML < -1.5) {
           var position = camera.getAttribute('position');
           var rotation = camera.getAttribute('rotation');
           position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
@@ -31,7 +29,9 @@ function render() {
       }      
 }
 render();
+            
         </script> 
+        
     <a-scene>
         <a-entity id="maze" position="-4 1 -10">
             <a-box class="collidable" position="0 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>

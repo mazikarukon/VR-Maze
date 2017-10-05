@@ -70,6 +70,7 @@
             camera.setAttribute('near', '0.01');
             var t = 0;
             var speed = 0.05;
+            var z = 0;
             scene.appendChild(camera);
             function render() {
                 t += 0.01;
@@ -87,7 +88,7 @@
             }
             render();
              window.addEventListener('devicemotion', function(event) {
-                var z = event.acceleration.z; // Z軸の加速度
+                z = event.acceleration.z; // Z軸の加速度
             });
         </script>
 

@@ -24,6 +24,8 @@ window.addEventListener('devicemotion', function(event){ //デバイスが動い
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
+                var camera = document.getElementById('camera');
+
                 if (document.getElementById('accelerationZ').innerHTM < -1.5) {
                     var position = camera.getAttribute('position');
                     var rotation = camera.getAttribute('rotation');

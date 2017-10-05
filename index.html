@@ -12,6 +12,9 @@
     <body>
     <a-scene>
         <a-entity>
+            <a-camera position="4 0 9" near="0.1"></a-camera>
+        </entity>
+        <a-entity>
             <a-box class="collidable" position="0 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
             <a-box class="collidable" position="0 0 1" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
             <a-box class="collidable" position="0 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
@@ -64,9 +67,7 @@
            </entity>
         <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
         <a-sky color="#ECECEC"></a-sky>
-        <a-entity>
-            <a-camera position="4 0 9" near="0.1"></a-camera>
-        </entity>
+        
     </a-scene>
         <script>
             var t = 0;

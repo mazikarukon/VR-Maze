@@ -8,7 +8,7 @@
 <script src="./script/aframe.js"></script>
     </head>
     <body>
-        <p>前後方向の加速度:<br><span id="accelerationIncludingGravityZ"></span>m/s<sup>2</sup>
+       
         <script>
           window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
             document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
@@ -104,5 +104,6 @@ render();
     <a-light  type="directional"  color="#FFF"  intensity="0.5"  position="0 5 10"></a-light>
     <a-light  type="ambient"  color="#FFF"></a-light> 
 </a-scene>
+         <p>前後方向の加速度:<br><span id="accelerationIncludingGravityZ"></span>m/s<sup>2</sup>
 </body>
 </html>

@@ -69,7 +69,7 @@
             camera.setAttribute('position', '4 1 9');
             camera.setAttribute('near', '0.5');
             var t = 0;
-            var speed = 0.05;
+            var speed = 0.01;
             scene.appendChild(camera);
             function render() {
                 t += 0.01;
@@ -79,7 +79,7 @@
 
                 position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
                 position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
-                camera.setAttribute('position', '4 '+(Math.sin(t*2)+1)+' 9');
+                camera.setAttribute('position', position);
                 
             }
             render();

@@ -20,23 +20,14 @@ window.addEventListener('devicemotion', function(event){ //デバイスが動い
             
             
             var t = 0;
-            var speed = 0.05;
+            var camera = document.getElementById('camera');
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
-                var camera = document.getElementById('camera');
-
-                if (document.getElementById('accelerationZ').innerHTM < -1.5) {
-                    var position = camera.getAttribute('position');
-                    var rotation = camera.getAttribute('rotation');
-
-                    
-                    position.z += speed;
-                    camera.setAttribute('position', position);
-                }
-
+                camera.setAttribute('position', t);
+                
             }
-render();
+            render();
             
         </script>
 

@@ -66,6 +66,7 @@
         <script>
             window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
             document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
+            }
             var scene = document.querySelector('a-scene');
             var camera = document.createElement('a-camera');
             camera.setAttribute('position', '4 0.3 9');

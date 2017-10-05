@@ -68,6 +68,7 @@
             var t = 0;
             var speed = 0.05;
             var camera = document.getElementById('camera');
+            scene.appendChild(camera);
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);

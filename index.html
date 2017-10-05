@@ -66,12 +66,11 @@
     </a-scene>
         <script>
             var t = 0;
-            var camera = document.getElementById('a-camera');
-
+            var cylinder = document.createElement('a-cylinder');
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
-                camera.setAttribute('position', '1 0 1');
+                cylinder.setAttribute('position', '3 '+(Math.sin(t*2)+1)+' 0');
                 
             }
             render();

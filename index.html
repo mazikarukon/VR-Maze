@@ -72,11 +72,7 @@
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
-                var position = camera.getAttribute('position');
-                var rotation = camera.getAttribute('rotation');
-                position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
-                position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
-                camera.setAttribute('position', 'position');
+                camera.setAttribute('position', '3 '+(Math.sin(t*2)+1)+' 0');
                 
             }
             render();

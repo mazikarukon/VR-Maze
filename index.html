@@ -66,7 +66,8 @@
         <script>
             var scene = document.querySelector('a-scene');
             var camera = document.createElement('a-camera');
-            camera.setAttribute('position', '3 1 0');
+            camera.setAttribute('position', '4 1 9');
+            camera.setAttribute('near', '0.5');
             var t = 0;
             scene.appendChild(camera);
             function render() {

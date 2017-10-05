@@ -59,20 +59,23 @@
             <a-box class="collidable" position="8 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
         <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
         <a-sky color="#ECECEC"></a-sky>
-        <a-entity id="camera" camera look-controls raycaster="objects: .collidable; far: 0.4;" collider-check rotation="0 0 0" position="4 0 10"></a-entity>
+        <a-entity id="camera" camera look-controls raycaster="objects: .collidable; far: 0.4;" collider-check rotation="0 0 0" position="4 2 10"></a-entity>
         
     </a-scene>
         <script>
             window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
             document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
             var t = 0;
+            var speed = 0.05;
             var camera = document.getElementById('camera');
-            var position = camera.getAttribute('position');
-            var rotation = camera.getAttribute('rotation');
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
-                //camera.setAttribute('position', '3 '+(Math.sin(t*2)+1)+' 0');
+                var position = camera.getAttribute('position');
+                var rotation = camera.getAttribute('rotation');
+                position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
+                position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
+                camera.setAttribute('position', 'position');
                 
             }
             render();

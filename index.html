@@ -10,29 +10,6 @@
         <script src="./script/aframe.min.js"></script>
     </head>
     <body>
-        <p>前後方向の加速度:<br><span id="accelerationZ"></span>m/s<sup>2</sup>
-        
-        <script>
-window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
-    document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
-
-        });
-            
-            
-            var t = 0;
-            var camera = document.getElementById('camera');
-            function render() {
-                t += 0.01;
-                requestAnimationFrame(render);
-                camera.setAttribute('position', t);
-                
-            }
-            render();
-            
-        </script>
-
-        
-        
     <a-scene>
         <a-entity position="-4 1 -6">
             <a-box class="collidable" position="0 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
@@ -87,6 +64,19 @@ window.addEventListener('devicemotion', function(event){ //デバイスが動い
       <a-plane  rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
+                <script>
+            var t = 0;
+            var camera = document.getElementById('camera');
+            function render() {
+                t += 0.01;
+                requestAnimationFrame(render);
+                camera.setAttribute('position', t);
+                
+            }
+            render();
+            
+        </script>
+
             
 </body>
 </html>

@@ -63,10 +63,7 @@
         
     </a-scene>
         <script>
-            window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
-            document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
             var t = 0;
-            var speed = 0.05;
             var camera = document.getElementById('camera');
             scene.appendChild(camera);
             function render() {

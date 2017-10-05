@@ -64,9 +64,6 @@
         -->
     </a-scene>
         <script>
-            window.addEventListener('devicemotion', function(event) {
-                var z = event.acceleration.z; // Z軸の加速度
-            });
             var scene = document.querySelector('a-scene');
             var camera = document.createElement('a-camera');
             camera.setAttribute('position', '4 0.3 9');
@@ -83,13 +80,15 @@
                    
                     position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
                     position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
-                    position.y = z;
                     camera.setAttribute('position', position);
                 }
                 
                 
             }
             render();
+             window.addEventListener('devicemotion', function(event) {
+                var z = event.acceleration.z; // Z軸の加速度
+            });
         </script>
 
             

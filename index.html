@@ -65,7 +65,7 @@
     </a-scene>
         <script>
             var scene = document.querySelector('a-scene');
-            var camera = document.querySelector('a-entity[camera]').components.camera.camera;
+            var camera = document.createElement('a-camera');
             camera.setAttribute('position', '3 1 0');
             var t = 0;
             scene.appendChild(camera);

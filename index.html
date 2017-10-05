@@ -59,14 +59,13 @@
             <a-box class="collidable" position="8 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
         <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
         <a-sky color="#ECECEC"></a-sky>
-        <a-entity id="camera" position="0 0 0"></a-entity>
         <!--
         <a-entity id="camera" camera look-controls raycaster="objects: .collidable; far: 0.5;" collider-check rotation="0 0 0" position="0 0 0"></a-entity>
         -->
     </a-scene>
         <script>
             var scene = document.querySelector('a-scene');
-            var camera = document.getElementById('camera');
+            var camera = document.querySelector('a-camera');
             camera.setAttribute('position', '3 1 0');
             var t = 0;
             scene.appendChild(camera);

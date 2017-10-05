@@ -17,6 +17,19 @@ require('aframe');
           window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
             document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
         });
+            
+            
+            AFRAME.registerComponent('collider-check', {
+    dependencies: ['raycaster'],
+    init: function () {
+        this.el.addEventListener('raycaster-intersection', function () {
+            isIntersect = true;
+        });
+        this.el.addEventListener('raycaster-intersection-cleared', function () {
+            isIntersect = false;
+        });
+    }
+});
             var t = 0;
             var speed = 0.05;
             var isIntersect = false;

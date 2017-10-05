@@ -8,6 +8,7 @@
 <script src="./script/aframe.js"></script>
     </head>
     <body>
+        <p>前後方向の加速度:<br><span id="accelerationIncludingGravityZ"></span>m/s<sup>2</sup>
         <script>
           window.addEventListener('devicemotion', function(event){ //デバイスが動いたときに発火
             document.getElementById('accelerationZ').innerHTML = event.acceleration.z; // event.acceleration.zで前後方向の加速度取得
@@ -33,13 +34,13 @@ function render() {
   t += 0.01;
   requestAnimationFrame(render);
   var camera = document.getElementById('camera');
-      //if ( document.getElementById('accelerationZ').innerHTML < -1.5) {
+      if ( document.getElementById('accelerationZ').innerHTML < -1.5) {
           var position = camera.getAttribute('position');
           var rotation = camera.getAttribute('rotation');
           position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
           position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
           camera.setAttribute('position', position);
-     // }      
+      }      
 }
 render();
             

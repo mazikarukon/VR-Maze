@@ -62,17 +62,17 @@
             <a-box class="collidable" position="8 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
             <a-box class="collidable" position="8 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
            </entity>
-      <a-plane  rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-     <a-camera position="4 0 9" near="0.1" far="1000"></a-camera>
+        <a-plane  rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-camera position="4 0 9" near="0.1"></a-camera>
     </a-scene>
-                <script>
+        <script>
             var t = 0;
             var camera = document.getElementById('a-camera');
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
-                camera.setAttribute('position', 't't't');
+                camera.setAttribute('position', 't t t');
                 
             }
             render();

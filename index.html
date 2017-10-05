@@ -28,7 +28,9 @@ window.addEventListener('devicemotion', function(event){ //デバイスが動い
                     var position = camera.getAttribute('position');
                     var rotation = camera.getAttribute('rotation');
 
-                    position.x += speed;
+                    
+                    position.z += speed;
+                    camera.setAttribute('position', position);
                 }
 
             }

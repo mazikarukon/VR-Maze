@@ -18,23 +18,12 @@
             var isIntersect = false;
             
             
-            AFRAME.registerComponent('collider-check', {
-    dependencies: ['raycaster'],
-    init: function () {
-        this.el.addEventListener('raycaster-intersection', function () {
-            isIntersect = true;
-        });
-        this.el.addEventListener('raycaster-intersection-cleared', function () {
-            isIntersect = false;
-        });
-    }
-});
- 
+     
 function render() {
   t += 0.01;
   requestAnimationFrame(render);
   var camera = document.getElementById('camera');
-      if ( document.getElementById('accelerationZ').innerHTML < -1.5) {
+      if(document.getElementById('accelerationZ').innerHTML < -1.5){
           var position = camera.getAttribute('position');
           var rotation = camera.getAttribute('rotation');
           position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;

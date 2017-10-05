@@ -63,11 +63,13 @@
     </a-scene>
         <script>
             var t = 0;
-            var cylinder = document.createElement('a-cylinder');
-            cylinder.setAttribute('color', '#FF9500');
+            var scene = document.querySelector('a-scene');
+    var cylinder = document.createElement('a-cylinder');
+    cylinder.setAttribute('color', '#FF9500');
     cylinder.setAttribute('height', '2');
     cylinder.setAttribute('radius', '0.75');
     cylinder.setAttribute('position', '-2 1 0');
+    scene.appendChild(cylinder);
             function render() {
                 t += 0.01;
                 requestAnimationFrame(render);
